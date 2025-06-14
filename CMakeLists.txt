@@ -17,5 +17,6 @@ include_directories(${TWSAPI_SRC_DIR})
 add_executable(TWSConnect
     main.cpp
     MyWrapper.h
+    OrderUtils.cpp
     ${TWSAPI_SOURCES}
 )
