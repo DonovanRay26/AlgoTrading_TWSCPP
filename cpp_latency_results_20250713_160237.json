@@ -1,0 +1,328 @@
+{
+  "test_info": {
+    "timestamp": "2025-07-13 16:02:37",
+    "total_measurements": 29,
+    "valid_measurements": 29
+  },
+  "measurements": [
+    {
+      "signal_id": "b412bd8d-c691-47d9-8869-22e39f1bcba9",
+      "zmq_receive_latency": 12758.8,
+      "json_parsing_latency": 43.2,
+      "signal_validation_latency": 0.3,
+      "risk_check_latency": 17.7,
+      "order_creation_latency": 1.5,
+      "tws_simulation_latency": 18064,
+      "total_cpp_latency": 30900.6,
+      "error_message": ""
+    },
+    {
+      "signal_id": "c26734d4-7cb9-46a9-8784-0cab21fceda2",
+      "zmq_receive_latency": 7.6,
+      "json_parsing_latency": 30.7,
+      "signal_validation_latency": 0.1,
+      "risk_check_latency": 19,
+      "order_creation_latency": 7.8,
+      "tws_simulation_latency": 15184.4,
+      "total_cpp_latency": 15251,
+      "error_message": ""
+    },
+    {
+      "signal_id": "7e51a871-c4b9-4ae0-bbe7-fd7c71c94595",
+      "zmq_receive_latency": 3.9,
+      "json_parsing_latency": 15.7,
+      "signal_validation_latency": 0,
+      "risk_check_latency": 6.5,
+      "order_creation_latency": 0.9,
+      "tws_simulation_latency": 15092.6,
+      "total_cpp_latency": 15120.3,
+      "error_message": ""
+    },
+    {
+      "signal_id": "7395af83-0434-4fe7-9a43-f97a9bfdfa9f",
+      "zmq_receive_latency": 3.4,
+      "json_parsing_latency": 19.3,
+      "signal_validation_latency": 0.1,
+      "risk_check_latency": 15.6,
+      "order_creation_latency": 1.4,
+      "tws_simulation_latency": 15273.9,
+      "total_cpp_latency": 15314.7,
+      "error_message": ""
+    },
+    {
+      "signal_id": "1f2dd2ec-26d0-44a4-b01a-00d9c53a6c89",
+      "zmq_receive_latency": 2.8,
+      "json_parsing_latency": 20.1,
+      "signal_validation_latency": 0.3,
+      "risk_check_latency": 13.9,
+      "order_creation_latency": 1.3,
+      "tws_simulation_latency": 15539.7,
+      "total_cpp_latency": 15578.9,
+      "error_message": ""
+    },
+    {
+      "signal_id": "31bad031-749b-4c34-845f-7eb3f9fc3c21",
+      "zmq_receive_latency": 5.2,
+      "json_parsing_latency": 27.5,
+      "signal_validation_latency": 0.2,
+      "risk_check_latency": 13.1,
+      "order_creation_latency": 1,
+      "tws_simulation_latency": 15272,
+      "total_cpp_latency": 15320.1,
+      "error_message": ""
+    },
+    {
+      "signal_id": "06108079-775e-4e4f-b665-4c037e1b9174",
+      "zmq_receive_latency": 2.7,
+      "json_parsing_latency": 18.2,
+      "signal_validation_latency": 0.2,
+      "risk_check_latency": 10.4,
+      "order_creation_latency": 1.2,
+      "tws_simulation_latency": 15235.6,
+      "total_cpp_latency": 15269.5,
+      "error_message": ""
+    },
+    {
+      "signal_id": "4958e3af-ca10-479e-997f-1fc71f3c90bd",
+      "zmq_receive_latency": 6.4,
+      "json_parsing_latency": 25.3,
+      "signal_validation_latency": 0.2,
+      "risk_check_latency": 10.9,
+      "order_creation_latency": 1.1,
+      "tws_simulation_latency": 14985,
+      "total_cpp_latency": 15030.4,
+      "error_message": ""
+    },
+    {
+      "signal_id": "0aaec80e-0a4c-41cc-b9e2-baa6e4241aac",
+      "zmq_receive_latency": 3.7,
+      "json_parsing_latency": 20.7,
+      "signal_validation_latency": 0.1,
+      "risk_check_latency": 13.7,
+      "order_creation_latency": 2.3,
+      "tws_simulation_latency": 15234.7,
+      "total_cpp_latency": 15276.4,
+      "error_message": ""
+    },
+    {
+      "signal_id": "70d21375-10bb-499a-9cab-234b26eddcc4",
+      "zmq_receive_latency": 2.9,
+      "json_parsing_latency": 18.5,
+      "signal_validation_latency": 0,
+      "risk_check_latency": 7.7,
+      "order_creation_latency": 1.5,
+      "tws_simulation_latency": 15307.2,
+      "total_cpp_latency": 15338.9,
+      "error_message": ""
+    },
+    {
+      "signal_id": "9e636bb6-ea2d-43b6-b918-8d465855f350",
+      "zmq_receive_latency": 3.2,
+      "json_parsing_latency": 16.2,
+      "signal_validation_latency": 0.1,
+      "risk_check_latency": 9.4,
+      "order_creation_latency": 0.9,
+      "tws_simulation_latency": 15203.9,
+      "total_cpp_latency": 15234.4,
+      "error_message": ""
+    },
+    {
+      "signal_id": "b5f436f5-b1ea-4a21-8752-f3a28b545b9b",
+      "zmq_receive_latency": 2.9,
+      "json_parsing_latency": 20,
+      "signal_validation_latency": 0.1,
+      "risk_check_latency": 15,
+      "order_creation_latency": 1.8,
+      "tws_simulation_latency": 15386.9,
+      "total_cpp_latency": 15427.8,
+      "error_message": ""
+    },
+    {
+      "signal_id": "780c46e1-dea6-4d2b-8df4-fd01117bb0c2",
+      "zmq_receive_latency": 5.7,
+      "json_parsing_latency": 18.9,
+      "signal_validation_latency": 0.1,
+      "risk_check_latency": 9.5,
+      "order_creation_latency": 1,
+      "tws_simulation_latency": 15525,
+      "total_cpp_latency": 15561.4,
+      "error_message": ""
+    },
+    {
+      "signal_id": "b68b953f-ae87-46ee-af06-9b655fcd0a61",
+      "zmq_receive_latency": 4.5,
+      "json_parsing_latency": 20,
+      "signal_validation_latency": 0.2,
+      "risk_check_latency": 11,
+      "order_creation_latency": 1,
+      "tws_simulation_latency": 15357.4,
+      "total_cpp_latency": 15395.1,
+      "error_message": ""
+    },
+    {
+      "signal_id": "547068f8-1666-4c3a-aa63-b0065b98b2a6",
+      "zmq_receive_latency": 5.5,
+      "json_parsing_latency": 25.2,
+      "signal_validation_latency": 0.2,
+      "risk_check_latency": 13.5,
+      "order_creation_latency": 1.2,
+      "tws_simulation_latency": 15448.8,
+      "total_cpp_latency": 15495.3,
+      "error_message": ""
+    },
+    {
+      "signal_id": "273dfed7-25b7-401c-ae67-004239270e8f",
+      "zmq_receive_latency": 7,
+      "json_parsing_latency": 27,
+      "signal_validation_latency": 0.1,
+      "risk_check_latency": 13.7,
+      "order_creation_latency": 1.2,
+      "tws_simulation_latency": 15388.7,
+      "total_cpp_latency": 15439,
+      "error_message": ""
+    },
+    {
+      "signal_id": "a61ff7b7-13c8-4885-8fda-90b225f76a10",
+      "zmq_receive_latency": 4.6,
+      "json_parsing_latency": 25.6,
+      "signal_validation_latency": 0,
+      "risk_check_latency": 29.4,
+      "order_creation_latency": 1.6,
+      "tws_simulation_latency": 15332.8,
+      "total_cpp_latency": 15395.5,
+      "error_message": ""
+    },
+    {
+      "signal_id": "11465e4d-bf7e-49f9-8392-2fa935be7279",
+      "zmq_receive_latency": 4.2,
+      "json_parsing_latency": 27.8,
+      "signal_validation_latency": 0.2,
+      "risk_check_latency": 17.9,
+      "order_creation_latency": 2.1,
+      "tws_simulation_latency": 15114.8,
+      "total_cpp_latency": 15168.3,
+      "error_message": ""
+    },
+    {
+      "signal_id": "4684b170-4cf8-4dc4-bfc2-8d80018cb70e",
+      "zmq_receive_latency": 3.1,
+      "json_parsing_latency": 19.5,
+      "signal_validation_latency": 0.2,
+      "risk_check_latency": 16.4,
+      "order_creation_latency": 2,
+      "tws_simulation_latency": 15598,
+      "total_cpp_latency": 15640.4,
+      "error_message": ""
+    },
+    {
+      "signal_id": "d7e396b2-7678-4efe-b8b0-01036de2c75f",
+      "zmq_receive_latency": 5.4,
+      "json_parsing_latency": 23.8,
+      "signal_validation_latency": 0.1,
+      "risk_check_latency": 13.8,
+      "order_creation_latency": 1.4,
+      "tws_simulation_latency": 15152.5,
+      "total_cpp_latency": 15198.6,
+      "error_message": ""
+    },
+    {
+      "signal_id": "cfa770a8-a8ea-4016-ad4c-85cba41841ef",
+      "zmq_receive_latency": 3,
+      "json_parsing_latency": 19.1,
+      "signal_validation_latency": 0.2,
+      "risk_check_latency": 10.8,
+      "order_creation_latency": 1.1,
+      "tws_simulation_latency": 15325.9,
+      "total_cpp_latency": 15361.4,
+      "error_message": ""
+    },
+    {
+      "signal_id": "7a4fead7-dfdf-4d77-90ba-df73ca6621f3",
+      "zmq_receive_latency": 6.7,
+      "json_parsing_latency": 26.2,
+      "signal_validation_latency": 0.4,
+      "risk_check_latency": 15.6,
+      "order_creation_latency": 1.4,
+      "tws_simulation_latency": 15545.1,
+      "total_cpp_latency": 15596.6,
+      "error_message": ""
+    },
+    {
+      "signal_id": "123d3062-8652-47d4-9ddc-a730c6cf192f",
+      "zmq_receive_latency": 4.5,
+      "json_parsing_latency": 20.6,
+      "signal_validation_latency": 0.1,
+      "risk_check_latency": 9.6,
+      "order_creation_latency": 1.1,
+      "tws_simulation_latency": 15448.7,
+      "total_cpp_latency": 15485.7,
+      "error_message": ""
+    },
+    {
+      "signal_id": "a37e7869-c88a-418a-8740-ebe9310744c5",
+      "zmq_receive_latency": 4.8,
+      "json_parsing_latency": 25.4,
+      "signal_validation_latency": 0,
+      "risk_check_latency": 6.8,
+      "order_creation_latency": 1.1,
+      "tws_simulation_latency": 15391.2,
+      "total_cpp_latency": 15430.7,
+      "error_message": ""
+    },
+    {
+      "signal_id": "eae0be03-9b97-418e-9ce8-28141270c40c",
+      "zmq_receive_latency": 3.9,
+      "json_parsing_latency": 15.4,
+      "signal_validation_latency": 0.1,
+      "risk_check_latency": 7.9,
+      "order_creation_latency": 0.9,
+      "tws_simulation_latency": 15553.7,
+      "total_cpp_latency": 15583.2,
+      "error_message": ""
+    },
+    {
+      "signal_id": "1c3f7caa-fd08-4839-a0ee-e7081c7714d8",
+      "zmq_receive_latency": 5.8,
+      "json_parsing_latency": 25.2,
+      "signal_validation_latency": 0.1,
+      "risk_check_latency": 8.4,
+      "order_creation_latency": 1.1,
+      "tws_simulation_latency": 15489.9,
+      "total_cpp_latency": 15531.6,
+      "error_message": ""
+    },
+    {
+      "signal_id": "950f5d24-cd7b-487f-9124-9bc884d7b8c4",
+      "zmq_receive_latency": 2.5,
+      "json_parsing_latency": 15.1,
+      "signal_validation_latency": 0.1,
+      "risk_check_latency": 9.4,
+      "order_creation_latency": 1,
+      "tws_simulation_latency": 15430,
+      "total_cpp_latency": 15459,
+      "error_message": ""
+    },
+    {
+      "signal_id": "519ca100-92ab-4978-94dd-64e35b515981",
+      "zmq_receive_latency": 5.4,
+      "json_parsing_latency": 18.8,
+      "signal_validation_latency": 0.2,
+      "risk_check_latency": 10.3,
+      "order_creation_latency": 1.1,
+      "tws_simulation_latency": 15444.8,
+      "total_cpp_latency": 15481.5,
+      "error_message": ""
+    },
+    {
+      "signal_id": "de46d8d1-5513-470b-905c-81132de65eec",
+      "zmq_receive_latency": 6.3,
+      "json_parsing_latency": 29.7,
+      "signal_validation_latency": 0.2,
+      "risk_check_latency": 6.44416e+06,
+      "order_creation_latency": 3.8,
+      "tws_simulation_latency": 12594.2,
+      "total_cpp_latency": 6.4568e+06,
+      "error_message": ""
+    }
+  ]
+}

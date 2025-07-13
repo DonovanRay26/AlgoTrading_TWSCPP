@@ -1,0 +1,15 @@
+# Pairs Trading Configuration
+pairs:
+  - name: "EWA_EWC"
+    symbol_a: "EWA"      # iShares MSCI Australia ETF
+    symbol_b: "EWC"      # iShares MSCI Canada ETF
+    description: "Australia vs Canada ETF pair"
+    enabled: true
+    allocation: 0.35      # 35% of capital allocated to this pair
+
+# Pair validation settings
+validation:
+  min_correlation: 0.7        # Minimum correlation for pair selection
+  min_cointegration_pvalue: 0.05  # Maximum p-value for cointegration test
+  min_history_days: 252       # Minimum days of historical data required
+  revalidation_frequency: 30  # Days between pair revalidation

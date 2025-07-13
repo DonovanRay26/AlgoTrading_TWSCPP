@@ -4,18 +4,25 @@
 #include "EReaderOSSignal.h"
 #include "EClientSocket.h"
 #include <iostream>
+#include <functional>
+
+// Forward declaration
+class OrderManager;
 
 class MyWrapper : public EWrapper {
 public:
     EReaderOSSignal signal;
     EClientSocket client;
 
-    MyWrapper() : signal(2000), client(this, &signal) {}
+    MyWrapper() : signal(2000), client(this, &signal), orderManager_(nullptr) {}
+
+    // Set order manager callback
+    void setOrderManager(OrderManager* orderManager) {
+        orderManager_ = orderManager;
+    }
 
     // --- Core functionality ---
-    void error(int id, int errorCode, const std::string& errorString, const std::string& advancedOrderRejectJson) override {
-        std::cerr << "Error " << errorCode << ": " << errorString << std::endl;
-    }
+    void error(int id, int errorCode, const std::string& errorString, const std::string& advancedOrderRejectJson) override;
 
     void connectionClosed() override {
         std::cout << "Connection closed" << std::endl;
@@ -25,7 +32,7 @@ public:
         std::cout << "Next valid ID: " << orderId << std::endl;
     }
 
-void tickPrice(TickerId tickerId, TickType field, double price, const TickAttrib& attrib){}
+void tickPrice(TickerId tickerId, TickType field, double price, const TickAttrib& attrib) override;
 void tickSize(TickerId tickerId, TickType field, Decimal size){}
 void tickOptionComputation(TickerId tickerId, TickType tickType, int tickAttrib, double impliedVol, double delta,
 	double optPrice, double pvDividend, double gamma, double vega, double theta, double undPrice){}
@@ -35,7 +42,7 @@ void tickEFP(TickerId tickerId, TickType tickType, double basisPoints, const std
 	double totalDividends, int holdDays, const std::string& futureLastTradeDate, double dividendImpact, double dividendsToLastTradeDate){}
 void orderStatus(OrderId orderId, const std::string& status, Decimal filled,
 	Decimal remaining, double avgFillPrice, int permId, int parentId,
-	double lastFillPrice, int clientId, const std::string& whyHeld, double mktCapPrice){}
+	double lastFillPrice, int clientId, const std::string& whyHeld, double mktCapPrice) override;
 void openOrder(OrderId orderId, const Contract&, const Order&, const OrderState&){}
 void openOrderEnd(){}
 void winError(const std::string& str, int lastError){}
@@ -124,4 +131,7 @@ void wshMetaData(int reqId, const std::string& dataJson){}
 void wshEventData(int reqId, const std::string& dataJson){}
 void historicalSchedule(int reqId, const std::string& startDateTime, const std::string& endDateTime, const std::string& timeZone, const std::vector<HistoricalSession>& sessions){}
 void userInfo(int reqId, const std::string& whiteBrandingId){}
+
+private:
+    OrderManager* orderManager_;
 };

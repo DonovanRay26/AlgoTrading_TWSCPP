@@ -13,7 +13,7 @@ Contract createStockContract(const std::string& symbol) {
 Order createLimitOrder(const std::string& action, int quantity, double price) {
     Order order;
     order.action = action;  // "BUY" or "SELL"
-    order.orderType = "LMT";
+    order.orderType = "LMT";  // Limit order
     order.totalQuantity = quantity;
     order.lmtPrice = price;
     order.transmit = true;

@@ -1,0 +1,40 @@
+# Risk Management Configuration
+risk_management:
+  # Position limits
+  position_limits:
+    max_positions_per_pair: 1      # Maximum concurrent positions per pair
+    max_total_positions: 4         # Maximum total positions across all pairs
+    max_position_value: 50000      # Maximum dollar value per position
+    max_portfolio_value: 200000    # Maximum total portfolio value
+    
+  # Drawdown controls
+  drawdown:
+    max_daily_drawdown: 0.03       # 3% maximum daily drawdown
+    max_total_drawdown: 0.05       # 5% maximum total drawdown
+    emergency_stop_drawdown: 0.075  # 7.5% emergency stop
+    
+  # Volatility controls
+  volatility:
+    max_position_volatility: 0.30  # 30% maximum position volatility
+    max_portfolio_volatility: 0.25 # 25% maximum portfolio volatility
+    
+  # Correlation monitoring
+  correlation:
+    min_pair_correlation: 0.6      # Minimum correlation for active trading
+    max_cross_correlation: 0.8     # Maximum correlation between different pairs
+    
+  # Market conditions
+  market_conditions:
+    min_volume_threshold: 1000000  # Minimum daily volume for trading
+    max_spread_threshold: 0.01     # Maximum bid-ask spread (1%)
+    trading_hours:
+      start: "09:30"
+      end: "16:00"
+      timezone: "America/New_York"
+      
+  # Emergency procedures
+  emergency:
+    auto_stop_on_error: true
+    max_consecutive_losses: 5
+    max_daily_losses: 3
+    recovery_wait_hours: 24

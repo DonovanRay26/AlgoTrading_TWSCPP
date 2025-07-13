@@ -1,0 +1,121 @@
+2025-07-13 13:48:10 - TradingSystem.DataEngine - INFO - Loaded configuration from config/trading_config.yaml
+2025-07-13 13:48:10 - TradingSystem.DataEngine - INFO - Loaded pairs configuration
+2025-07-13 13:48:10 - TradingSystem.DataEngine - INFO - Pairs Trading Data Engine initialized
+2025-07-13 13:48:10 - TradingSystem.DataEngine - INFO - Initializing data engine components...
+2025-07-13 13:48:10 - TradingSystem.DataEngine - ERROR - Failed to initialize data engine: name 'PairsKalmanFilter' is not defined
+2025-07-13 13:48:10 - TradingSystem.DataEngine - INFO - Stopping data engine...
+2025-07-13 13:48:10 - TradingSystem.MarketDataStreamer - INFO - Market data streamer stopped
+2025-07-13 13:48:12 - TradingSystem.DataEngine - INFO - Data engine stopped
+2025-07-13 13:49:10 - TradingSystem.DataEngine - INFO - Loaded configuration from config/trading_config.yaml
+2025-07-13 13:49:10 - TradingSystem.DataEngine - INFO - Loaded pairs configuration
+2025-07-13 13:49:10 - TradingSystem.DataEngine - INFO - Pairs Trading Data Engine initialized
+2025-07-13 13:49:10 - TradingSystem.DataEngine - INFO - Initializing data engine components...
+2025-07-13 13:49:10 - TradingSystem.DataEngine - INFO - Initialized strategy for pair: EWA_EWC (EWA/EWC)
+2025-07-13 13:49:11 - TradingSystem.DataEngine - INFO - Loading historical data for EWA_EWC...
+2025-07-13 13:49:11 - TradingSystem.DataEngine - ERROR - Error loading historical data: If using all scalar values, you must pass an index
+2025-07-13 13:49:11 - TradingSystem.DataEngine - ERROR - Failed to initialize data engine: If using all scalar values, you must pass an index
+2025-07-13 13:49:11 - TradingSystem.DataEngine - INFO - Stopping data engine...
+2025-07-13 13:49:11 - TradingSystem.MarketDataStreamer - INFO - Market data streamer stopped
+2025-07-13 13:49:13 - TradingSystem.DataEngine - INFO - Data engine stopped
+2025-07-13 13:50:15 - TradingSystem.DataEngine - INFO - Loaded configuration from config/trading_config.yaml
+2025-07-13 13:50:15 - TradingSystem.DataEngine - INFO - Loaded pairs configuration
+2025-07-13 13:50:15 - TradingSystem.DataEngine - INFO - Pairs Trading Data Engine initialized
+2025-07-13 13:50:15 - TradingSystem.DataEngine - INFO - Initializing data engine components...
+2025-07-13 13:50:16 - TradingSystem.DataEngine - INFO - Initialized strategy for pair: EWA_EWC (EWA/EWC)
+2025-07-13 13:50:16 - TradingSystem.DataEngine - INFO - Loading historical data for EWA_EWC from IBKR...
+2025-07-13 13:50:16 - TradingSystem.DataEngine - ERROR - Error loading historical data from IBKR: Not connected
+2025-07-13 13:50:16 - TradingSystem.DataEngine - ERROR - Failed to initialize data engine: Not connected
+2025-07-13 13:50:16 - TradingSystem.DataEngine - INFO - Stopping data engine...
+2025-07-13 13:50:16 - TradingSystem.MarketDataStreamer - INFO - Market data streamer stopped
+2025-07-13 13:50:18 - TradingSystem.DataEngine - INFO - Data engine stopped
+2025-07-13 13:51:04 - TradingSystem.DataEngine - INFO - Loaded configuration from config/trading_config.yaml
+2025-07-13 13:51:04 - TradingSystem.DataEngine - INFO - Loaded pairs configuration
+2025-07-13 13:51:04 - TradingSystem.DataEngine - INFO - Pairs Trading Data Engine initialized
+2025-07-13 13:51:04 - TradingSystem.DataEngine - INFO - Initializing data engine components...
+2025-07-13 13:51:04 - TradingSystem.DataEngine - INFO - Initialized strategy for pair: EWA_EWC (EWA/EWC)
+2025-07-13 13:51:04 - TradingSystem.DataEngine - INFO - Data engine initialization completed successfully
+2025-07-13 13:51:04 - TradingSystem.DataEngine - INFO - Starting pairs trading data engine...
+2025-07-13 13:51:04 - TradingSystem.MarketDataStreamer - INFO - Connecting to TWS at 127.0.0.1:7497
+2025-07-13 13:51:06 - TradingSystem.MarketDataStreamer - INFO - Successfully connected to TWS
+2025-07-13 13:51:06 - TradingSystem.MarketDataStreamer - INFO - Market data streamer started
+2025-07-13 13:51:06 - TradingSystem.MarketDataStreamer - INFO - Subscribed to EWA
+2025-07-13 13:51:06 - TradingSystem.MarketDataStreamer - INFO - Subscribed to EWC
+2025-07-13 13:51:36 - TradingSystem.MarketDataStreamer - WARNING - Timeout waiting for market data for symbols: ['EWA', 'EWC']
+2025-07-13 13:51:36 - TradingSystem.DataEngine - WARNING - Timeout waiting for initial market data
+2025-07-13 13:51:36 - TradingSystem.DataEngine - INFO - Loading historical data for EWA_EWC from IBKR...
+2025-07-13 13:51:36 - TradingSystem.MarketDataStreamer - ERROR - TWS Error 2174: Warning: You submitted request with date-time attributes without explicit time zone. Please switch to use yyyymmdd-hh:mm:ss in UTC or use instrument time zone, like US/Eastern. Implied time zone functionality will be removed in the next API release
+2025-07-13 13:51:37 - TradingSystem.DataEngine - ERROR - Insufficient common data for EWA_EWC: 1 points
+2025-07-13 13:51:37 - TradingSystem.DataEngine - INFO - Entering main processing loop...
+2025-07-13 13:51:56 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:00:51, CPU: 6.9%, Memory: 44.7%
+2025-07-13 13:52:16 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:01:11, CPU: 20.4%, Memory: 44.8%
+2025-07-13 13:52:36 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:01:31, CPU: 10.9%, Memory: 44.6%
+2025-07-13 13:52:56 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:01:51, CPU: 3.5%, Memory: 44.7%
+2025-07-13 13:53:16 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:02:11, CPU: 4.5%, Memory: 44.6%
+2025-07-13 13:53:36 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:02:31, CPU: 5.3%, Memory: 44.5%
+2025-07-13 13:53:56 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:02:51, CPU: 9.0%, Memory: 43.6%
+2025-07-13 13:54:16 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:03:11, CPU: 4.9%, Memory: 43.7%
+2025-07-13 13:54:36 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:03:31, CPU: 6.5%, Memory: 43.6%
+2025-07-13 13:54:56 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:03:51, CPU: 5.8%, Memory: 43.7%
+2025-07-13 13:55:16 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:04:11, CPU: 7.3%, Memory: 43.7%
+2025-07-13 13:55:36 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:04:31, CPU: 6.5%, Memory: 43.7%
+2025-07-13 13:55:56 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:04:51, CPU: 6.1%, Memory: 43.7%
+2025-07-13 13:56:16 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:05:11, CPU: 7.6%, Memory: 43.7%
+2025-07-13 13:56:37 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:05:31, CPU: 4.8%, Memory: 43.7%
+2025-07-13 13:56:57 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:05:51, CPU: 15.9%, Memory: 44.0%
+2025-07-13 13:57:17 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:06:11, CPU: 7.8%, Memory: 43.9%
+2025-07-13 13:57:37 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:06:31, CPU: 8.4%, Memory: 43.9%
+2025-07-13 13:57:57 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:06:52, CPU: 5.9%, Memory: 43.9%
+2025-07-13 13:58:17 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:07:12, CPU: 6.5%, Memory: 43.9%
+2025-07-13 13:58:37 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:07:32, CPU: 5.9%, Memory: 43.9%
+2025-07-13 13:58:57 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:07:52, CPU: 6.2%, Memory: 43.9%
+2025-07-13 13:59:17 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:08:12, CPU: 15.7%, Memory: 44.0%
+2025-07-13 13:59:37 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:08:32, CPU: 9.4%, Memory: 44.3%
+2025-07-13 13:59:57 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:08:52, CPU: 9.0%, Memory: 44.5%
+2025-07-13 14:00:17 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:09:12, CPU: 14.7%, Memory: 44.5%
+2025-07-13 14:00:37 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:09:32, CPU: 14.6%, Memory: 44.6%
+2025-07-13 14:00:55 - TradingSystem.DataEngine - INFO - Stopping data engine...
+2025-07-13 14:00:55 - TradingSystem.MarketDataStreamer - INFO - Cancelled market data for EWA
+2025-07-13 14:00:55 - TradingSystem.MarketDataStreamer - INFO - Cancelled market data for EWC
+2025-07-13 14:01:06 - TradingSystem.DataEngine - INFO - Loaded configuration from config/trading_config.yaml
+2025-07-13 14:01:06 - TradingSystem.DataEngine - INFO - Loaded pairs configuration
+2025-07-13 14:01:06 - TradingSystem.DataEngine - INFO - Pairs Trading Data Engine initialized
+2025-07-13 14:01:06 - TradingSystem.DataEngine - INFO - Initializing data engine components...
+2025-07-13 14:01:06 - TradingSystem.DataEngine - INFO - Initialized strategy for pair: EWA_EWC (EWA/EWC)
+2025-07-13 14:01:06 - TradingSystem.DataEngine - INFO - Data engine initialization completed successfully
+2025-07-13 14:01:06 - TradingSystem.DataEngine - INFO - Starting pairs trading data engine...
+2025-07-13 14:01:06 - TradingSystem.MarketDataStreamer - INFO - Connecting to TWS at 127.0.0.1:7497
+2025-07-13 14:01:08 - TradingSystem.MarketDataStreamer - INFO - Successfully connected to TWS
+2025-07-13 14:01:08 - TradingSystem.MarketDataStreamer - INFO - Market data streamer started
+2025-07-13 14:01:08 - TradingSystem.MarketDataStreamer - INFO - Subscribed to EWA
+2025-07-13 14:01:08 - TradingSystem.MarketDataStreamer - INFO - Subscribed to EWC
+2025-07-13 14:01:38 - TradingSystem.MarketDataStreamer - WARNING - Timeout waiting for market data for symbols: ['EWA', 'EWC']
+2025-07-13 14:01:38 - TradingSystem.DataEngine - WARNING - Timeout waiting for initial market data
+2025-07-13 14:01:38 - TradingSystem.DataEngine - INFO - Loading historical data for EWA_EWC from IBKR...
+2025-07-13 14:01:38 - TradingSystem.MarketDataStreamer - ERROR - TWS Error 2174: Warning: You submitted request with date-time attributes without explicit time zone. Please switch to use yyyymmdd-hh:mm:ss in UTC or use instrument time zone, like US/Eastern. Implied time zone functionality will be removed in the next API release
+2025-07-13 14:01:39 - TradingSystem.DataEngine - ERROR - Insufficient common data for EWA_EWC: 1 points
+2025-07-13 14:01:39 - TradingSystem.DataEngine - INFO - Entering main processing loop...
+2025-07-13 14:01:58 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:00:50, CPU: 11.5%, Memory: 44.8%
+2025-07-13 14:02:18 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:01:10, CPU: 8.0%, Memory: 44.5%
+2025-07-13 14:02:38 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:01:31, CPU: 35.7%, Memory: 45.4%
+2025-07-13 14:02:58 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:01:51, CPU: 10.9%, Memory: 46.7%
+2025-07-13 14:03:18 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:02:11, CPU: 8.9%, Memory: 47.0%
+2025-07-13 14:03:38 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:02:31, CPU: 9.2%, Memory: 47.0%
+2025-07-13 14:03:58 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:02:51, CPU: 9.5%, Memory: 46.8%
+2025-07-13 14:04:18 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:03:11, CPU: 7.1%, Memory: 46.9%
+2025-07-13 14:04:38 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:03:31, CPU: 12.2%, Memory: 46.7%
+2025-07-13 14:04:58 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:03:51, CPU: 8.3%, Memory: 47.7%
+2025-07-13 14:05:18 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:04:11, CPU: 10.8%, Memory: 47.7%
+2025-07-13 14:05:38 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:04:31, CPU: 8.1%, Memory: 47.7%
+2025-07-13 14:05:58 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:04:51, CPU: 7.6%, Memory: 47.7%
+2025-07-13 14:06:18 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:05:11, CPU: 6.0%, Memory: 47.7%
+2025-07-13 14:06:38 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:05:31, CPU: 6.2%, Memory: 47.7%
+2025-07-13 14:06:58 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:05:51, CPU: 14.4%, Memory: 47.8%
+2025-07-13 14:07:18 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:06:11, CPU: 20.6%, Memory: 47.8%
+2025-07-13 14:07:39 - TradingSystem.PerformanceTracker - INFO - System Status - Uptime: 0:06:31, CPU: 13.0%, Memory: 48.0%
+2025-07-13 14:07:45 - TradingSystem.DataEngine - INFO - Stopping data engine...
+2025-07-13 14:07:45 - TradingSystem.MarketDataStreamer - INFO - Cancelled market data for EWA
+2025-07-13 14:07:45 - TradingSystem.MarketDataStreamer - INFO - Cancelled market data for EWC
+2025-07-13 14:07:45 - TradingSystem.MarketDataStreamer - WARNING - Disconnected from TWS
+2025-07-13 14:07:45 - TradingSystem.MarketDataStreamer - INFO - Attempting reconnection 1/5
+2025-07-13 14:07:45 - TradingSystem.MarketDataStreamer - INFO - Disconnected from TWS
+2025-07-13 14:07:45 - TradingSystem.MarketDataStreamer - INFO - Market data streamer stopped

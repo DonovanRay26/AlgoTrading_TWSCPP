@@ -1,70 +1,248 @@
-# Algorithmic Trading with IBKR's TWS on C++
+# Algorithmic Pairs Trading System
 
-This project aims to achieve low-latency trading using C++ through Interactive Broker's Trader Workstation API
+A hybrid Python/C++ algorithmic trading system implementing statistical arbitrage strategies with real-time market data processing and low-latency order execution.
 
-## Current State
+## Overview
 
-As of right now this project:
- - Successfully includes IBKR's TWSAPI for C++
- - Resolves out-of-date aspects of the API code (stubbed out decimal operations in Decimal.cpp)
- - Overwrites EWrapper functions that will be needed during trading in MyWrapper.h
- - Connects to TWS in main.cpp
+This system implements a pairs trading strategy using Kalman Filter-based dynamic hedge ratio estimation. The architecture separates concerns between Python (data processing, signal generation) and C++ (order execution, risk management) for optimal performance.
 
+### Key Features
 
-## Next Steps
+- **Hybrid Architecture**: Python data engine + C++ order execution engine
+- **Real-Time Processing**: Microsecond-latency ZeroMQ communication
+- **Trading Algorithms**: Kalman Filter for dynamic hedge ratio estimation
+- **Brokerage Integration**: Interactive Brokers TWS API
+- **Risk Management**: Comprehensive position tracking and risk controls
+- **Production/Deployment**: Configuration management, logging, monitoring
 
-My next steps are to:
- - Research a trading strategy, likely a mean-reversion strategy with inspiration from Ernest Chan's Algorithmic Trading
- - Backtest trading strategy
- - Deploy trading strategy on a paper trading account for live-testing
+## Project Architecture
 
- ## Dependencies
+```
+┌────────────────────────┐    ZeroMQ    ┌───────────────────────┐
+│   Python Data          │ ───────────> │  C++ Order            │
+│     Engine             │              │   Engine              │
+│                        │              │                       │
+│ • Market Data          │              │ • Order Management    │
+│ • Signal Generation    │              │ • Risk Checks         │
+│ • Kalman Filtering     │              │ • Position Tracking   │
+└────────────────────────┘              └───────────────────────┘
+         ^                                      │
+         │                                      │
+         │                                      v
+┌─────────────────┐                     ┌─────────────────────┐
+│ Interactive     │                     │ TWS API             │
+│ Brokers API     │                     │ (Order Execution)   │
+│  (Market Data)  │                     └─────────────────────┘
+└─────────────────┘                     
+```
 
-- ✅ [Interactive Brokers C++ API](https://interactivebrokers.github.io/)
-- ✅ Visual Studio 2019+ or g++ (for Linux)
-- ✅ CMake 3.10 or higher
+## Quick Start
 
-Ensure TWS or IB Gateway is installed and running, with API access enabled:
-- IB TWS: `Edit → Global Configuration → API → Settings`
-- Enable `Socket clients` and set port (default: `7496` for TWS, `4001` for IB Gateway)
+### Prerequisites
 
----
+- **Python 3.8+**
+- **C++17 compatible compiler** (GCC 7+, Clang 5+, MSVC 2017+)
+- **Interactive Brokers TWS** (Paper Trading recommended for testing)
+- **CMake 3.15+**
 
-## Build Instructions
+### Installation
 
-### Windows (Visual Studio + CMake)
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd AlgoTrading_TWSCPP
+   ```
 
-1. Clone this repository:
-    ```bash
-    git clone https://github.com/yourusername/AlgoTrading_TWSCPP.git
-    cd AlgoTrading_TWSCPP
-    ```
+2. **Install Python dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-2. Modify the `CMakeLists.txt` to point to your TWS API source path (or copy all API `.cpp` and `.h` files into the project).
+3. **Build C++ components**
+   ```bash
+   mkdir build && cd build
+   cmake ..
+   make -j4
+   ```
 
-3. Build:
-    ```bash
-    mkdir build
-    cd build
-    cmake ..
-    cmake --build .
-    ```
+4. **Configure TWS**
+   - Enable API connections in TWS
+   - Set port to 7497 (paper trading) or 7496 (live)
+   - Allow connections from localhost
 
-4. Run the executable:
-    ```bash
-    ./Debug/TWSConnect.exe
-    ```
+5. **Update configuration**
+   ```bash
+   # Edit config/trading_config.yaml for your settings
+   # Set your allocated capital, risk parameters, etc.
+   ```
 
----
+### Running the System
 
-## Disclaimer
+```bash
+# Start the complete trading system
+python run_trading_system.py
 
-> This project is for **educational and research purposes only**. Trading involves substantial risk and is not suitable for every investor. Use at your own discretion.
+# Or run components separately
+python python/main_data_engine.py  # Data engine only
+./build/trading_engine             # C++ engine only
+```
 
----
+## Strategy Details
+
+### Pairs Trading with Kalman Filter
+
+The system implements statistical arbitrage using:
+
+- **Dynamic Hedge Ratios**: Kalman Filter estimates optimal hedge ratios in real-time
+- **Z-Score Based Signals**: Entry/exit based on statistical deviations
+- **Half-Life Screening**: Prevents trading on mean-reverting pairs with long half-lives
+- **Risk Management**: Position sizing, correlation monitoring, drawdown protection
+
+### Signal Generation Process
+
+1. **Data Ingestion**: Real-time market data from Interactive Brokers
+2. **Kalman Filter Update**: Dynamic hedge ratio estimation
+3. **Z-Score Calculation**: Statistical deviation measurement
+4. **Signal Generation**: Entry/exit decisions based on thresholds
+5. **Risk Validation**: Position sizing and risk checks
+
+### Order Execution Flow
+
+1. **Signal Reception**: C++ engine receives signals via ZeroMQ
+2. **Risk Validation**: Position limits, margin requirements
+3. **Order Creation**: Market orders for both legs of the spread
+4. **Execution**: TWS API order placement and monitoring
+5. **Position Tracking**: Real-time position and P&L updates
+
+## Configuration
+
+### Trading Parameters
+
+```yaml
+strategy:
+  entry_threshold: 0.25     # Z-score for entry
+  exit_threshold: 0.25      # Z-score for exit
+  max_half_life_days: 45    # Maximum half-life
+  
+kalman:
+  observation_covariance: 0.001
+  delta: 0.0001
+  initial_state_covariance: 1.0
+
+risk:
+  allocated_capital: 35000   # Capital per position
+  max_position_size: 1000    # Max shares
+```
+
+### Risk Management
+
+- **Position Limits**: Maximum position sizes per pair
+- **Correlation Monitoring**: Automatic pair breakdown detection
+- **Drawdown Protection**: Stop-loss mechanisms
+- **Margin Monitoring**: Real-time margin requirement tracking
+
+## Testing
+
+### Unit Tests
+
+```bash
+# Python tests
+python -m pytest tests/python/
+
+# C++ tests
+cd build && make test
+```
+
+### Integration Tests
+
+```bash
+# Test complete system
+python test_live_trading.py
+
+# Quick order execution test
+python quick_order_test.py
+```
+
+### Latency Testing
+
+```bash
+# Measure system latency
+python run_latency_test.py
+```
+
+## Performance
+
+### Latency Details
+
+- **End-to-End Latency (market data to order placement)** 5.63ms when tested on my system
+## Development
+
+### Project Structure
+
+```
+AlgoTrading_TWSCPP/
+├── python/                 # Python data engine
+│   ├── strategy/          # Trading strategies
+│   ├── data_engine/       # Market data processing
+│   ├── comms/             # ZeroMQ communication
+│   └── monitoring/        # Performance monitoring
+├── cpp/                   # C++ order execution engine
+│   ├── src/              # Source files
+│   ├── include/          # Header files
+│   └── tests/            # C++ tests
+├── config/               # Configuration files
+├── tests/                # Integration tests
+├── logs/                 # System logs
+└── backtest.ipynb        # Jupyter Notebook with Custom Backtesting Framework
+```
+
+### Adding New Strategies
+
+1. **Create strategy class** in `python/strategy/`
+2. **Implement signal generation** logic
+3. **Add configuration** in `config/trading_config.yaml`
+4. **Update signal parser** in C++ if needed
+5. **Add tests** for validation
+
+### Extending Order Types
+
+1. **Modify OrderManager** in C++
+2. **Update OrderUtils** for new order types
+3. **Add risk checks** as needed
+4. **Test with paper trading**
+
+## Risk Disclaimer
+
+**This software is for educational and research purposes only. Trading involves substantial risk of loss and is not suitable for all investors. Past performance does not guarantee future results.**
+
+- Always test with paper trading first
+- Start with small position sizes
+- Monitor system performance continuously
+- Understand the risks of algorithmic trading
+- Ensure compliance with local regulations
 
 ## License
 
-MIT License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
+## Technical Highlights
+
+### Advanced Algorithms
+- **Kalman Filter**: Dynamic hedge ratio estimation
+- **Statistical Arbitrage**: Mean-reversion based trading
+- **Half-Life Analysis**: Pair stability assessment
+
+### Performance Optimization
+- **ZeroMQ**: High-performance messaging
+- **C++ Order Engine**: Low-latency execution
+- **Memory Management**: Efficient data structures
+
+### Production Features
+- **Comprehensive Logging**: Structured logging with rotation
+- **Configuration Management**: YAML-based configuration
+- **Error Handling**: Robust error recovery
+- **Monitoring**: Performance metrics and alerts
+
+### Brokerage Integration
+- **Interactive Brokers API**: Industry-standard trading platform
+- **Real-Time Data**: Live market data streaming

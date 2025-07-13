@@ -1,0 +1,32 @@
+{
+    "tws_connection": {
+        "host": "127.0.0.1",
+        "port": 7497,
+        "client_id": 0
+    },
+    "zmq_connection": {
+        "host": "localhost",
+        "port": 5555
+    },
+    "risk_limits": {
+        "max_position_size": 10000,
+        "max_daily_loss": 5000.0,
+        "max_total_exposure": 100000.0,
+        "min_confidence": 0.7,
+        "max_z_score": 3.0
+    },
+    "trading": {
+        "default_order_type": "MKT",
+        "enable_risk_checks": true,
+        "enable_position_tracking": true,
+        "log_level": "INFO"
+    },
+    "pairs": [
+        {
+            "name": "EWA_EWC",
+            "symbol_a": "EWA",
+            "symbol_b": "EWC",
+            "enabled": true
+        }
+    ]
+} 

@@ -1,0 +1,42 @@
+# Trading Strategy Configuration
+strategy:
+  name: "pairs_trading"
+  version: "1.0.0"
+  
+  # Signal parameters
+  entry_threshold: 0.25     # Z-score threshold for entry (matches backtester)
+  exit_threshold: 0.25      # Z-score threshold for exit (matches backtester)
+  max_half_life_days: 45    # Maximum half-life in days (no trading if exceeded)
+  
+  # Kalman Filter parameters (matches backtester exactly)
+  kalman:
+    observation_covariance: 0.001
+    delta: 0.0001
+    transition_covariance: 0.0001  # Will be calculated as delta / (1 - delta)
+    initial_state_covariance: 1.0
+    
+  # Risk management (for signal generation only)
+  risk:
+    allocated_capital: 35000   # Capital allocated per position for sizing
+    max_position_size: 1000    # Maximum shares per position
+    max_correlation_threshold: 0.8  # Maximum correlation for pair breakdown
+    max_drawdown_percent: 5.0  # Maximum drawdown percentage before halting trading
+
+# Data configuration
+data:
+  update_frequency: 1          # Seconds between updates
+  history_days: 252            # Days of historical data to maintain
+  real_time_enabled: true
+  
+# Communication
+communication:
+  zmq_port: 5555
+  zmq_host: "localhost"
+  message_timeout: 1000        # milliseconds
+  
+# Logging
+logging:
+  level: "INFO"
+  file_path: "logs/trading.log"
+  max_file_size: "10MB"
+  backup_count: 5 
